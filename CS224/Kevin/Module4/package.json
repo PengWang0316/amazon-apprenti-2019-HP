@@ -1,7 +1,7 @@
 {
   "name": "module4",
   "version": "1.0.0",
-  "description": "",
+  "description": "The code for CS242 Module4 HP",
   "main": "index.js",
   "scripts": {
     "tsc": "tsc && cpx ./src/.env ./public && cpx ./src/views/**/* public/views && cpx ./src/imgs/**/* public/imgs",
@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
