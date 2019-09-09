@@ -13,7 +13,9 @@ export class BookFormComponent implements OnInit {
   private title: string = '';
   private isbn: string = '';
   private author: string = '';
+  private picture: string = '';
   private price: number = 0;
+  static URL_REGEXP = /^http(s*):\/\/.+/;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,15 +32,22 @@ export class BookFormComponent implements OnInit {
   handleSave() {
     let message: string;
     // If the the form input values are invalid, show a snackbar
-    if (this.title === '' || this.isbn === '' || this.author === '' || this.price < 0)
-      message = 'Please finish the form and offer a price equal or greater than 0';
+    if (this.title === '' || this.isbn === '' || this.author === '')
+      message = 'Please finish the form.';
+    else if (!BookFormComponent.URL_REGEXP.test(this.picture))
+      message = 'The picture should be start as http:// or https://';
+    else if (this.price < 0 )
+      message = 'Please offer a price equal or greater than 0.'
     else {
       // Call the add book API and reset all form input vaules
       message = 'Book is added.';
-      this.apiService.addNewBook({ title: this.title, isbn: this.isbn, author: this.author, price: this.price }).subscribe();
+      this.apiService.addNewBook({
+        title: this.title, isbn: this.isbn, author: this.author, picture: this.picture, price: this.price,
+      }).subscribe();
       this.title = '';
       this.isbn = '';
       this.author = '';
+      this.picture = '';
       this.price = 0;
     }
     this._snackBar.open(message, 'Close', { duration: 2000 });

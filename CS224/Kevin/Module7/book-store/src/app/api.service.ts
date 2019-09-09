@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  addNewBook(book: { title: string; isbn: string; author: string; price: number }) {
+  addNewBook(book: { title: string; isbn: string; author: string; picture: string, price: number }) {
     return this.httpClient.post(this.ADD_NEW_BOOK_API, book);
   }
 }
