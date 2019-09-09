@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -13,11 +14,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookFormComponent } from './book-form/book-form.component';
+import { BirthdayCardFormComponent } from './birthday-card-form/birthday-card-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookFormComponent,
+    BirthdayCardFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { BookFormComponent } from './book-form/book-form.component';
     FormsModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
