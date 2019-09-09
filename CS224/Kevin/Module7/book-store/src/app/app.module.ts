@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from "@angular/forms";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +27,7 @@ import { BookFormComponent } from './book-form/book-form.component';
     MatInputModule,
     MatToolbarModule,
     MatButtonModule,
+    MatMenuModule,
     FormsModule,
     MatSnackBarModule,
     HttpClientModule,
