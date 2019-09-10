@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import addBookController from './controllers/add-book';
+import addBirthdayCardController from './controllers/add-birthday-card';
+import fetchBooks from './controllers/fetch-books';
 
 dotenv.config();
 
@@ -23,5 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // The router
 app.post('/book', addBookController)
+app.post('/birthdayCard', addBirthdayCardController)
+app.get('/books', fetchBooks)
 
 app.listen(process.env.port, () => console.log(`The server is running on http://localhost:${process.env.port}`));

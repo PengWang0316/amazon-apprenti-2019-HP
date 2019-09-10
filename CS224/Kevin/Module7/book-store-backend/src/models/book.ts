@@ -13,8 +13,9 @@ const schema = new mongoose.Schema({
   title: { type: String, required: true },
   isbn: { type: String, required: true },
   author: { type: String, required: true },
+  // Should do validation for the picture url here
   picture: { type: String, required: true },
-  price: { type: Number, required: true, min: 0, max: 200 },
+  price: { type: Number, required: true, min: 0 },
 });
 
 const Book = mongoose.model<BookModel>('Book', schema);
@@ -25,5 +26,4 @@ export const addBook = (title: string, isbn: string, author: string, picture: st
 };
 
 // Find a user based on the username
-export const findUser = async (username: string) => await Book.findOne({ username })
-  .select({ title: 1 });
+export const fetchBooks = async () => await Book.find({});
