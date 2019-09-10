@@ -1,5 +1,5 @@
 <main class="main">
-  <div *ngFor="let book of books" class="bookList" (click)="openDialog(book.id)">
+  <div *ngFor="let book of books" class="bookList" (click)="openDialog(book._id)">
     <img alt="{{book.title}}" src="{{book.picture}}" class="bookImage"/>
     <div class="bookTitleDiv">
         <div class="bookTitle">{{book.title}}</div>

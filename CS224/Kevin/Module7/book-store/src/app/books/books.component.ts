@@ -5,7 +5,7 @@ import { BookDetailDialogComponent } from '../book-detail-dialog/book-detail-dia
 import { ApiService } from '../api.service';
 
 export interface Book {
-  id: string; title: string; isbn: string; author: string; price: number; picture: string;
+  _id: string; title: string; isbn: string; author: string; price: number; picture: string;
 }
 
 @Component({
@@ -26,11 +26,10 @@ export class BooksComponent implements OnInit {
       this.books = data;
       // Transfer the book array to an object to speed up the look up
       this.booksObject = this.books.reduce((obj, book) => {
-        obj[book.id] = book;
+        obj[book._id] = book;
         return obj;
       }, {});
     });
-
   }
 
   openDialog(id: string): void {
