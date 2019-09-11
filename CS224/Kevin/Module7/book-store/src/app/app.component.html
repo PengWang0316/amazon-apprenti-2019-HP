@@ -4,9 +4,13 @@
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
 
-  <span><button mat-button [routerLink]="['/birthdaycards']">Birthday Cards</button></span>
   <span>
-    <button mat-button [matMenuTriggerFor]="manageMenu">Manage Products</button>
+    <button mat-button [routerLink]="['/birthdaycards']" class="longTextBtn">Birthday Cards</button>
+    <button mat-button [routerLink]="['/birthdaycards']" class="shortTextBtn">Cards</button>
+  </span>
+  <span>
+    <button mat-button [matMenuTriggerFor]="manageMenu" class="longTextBtn">Manage Products</button>
+    <button mat-button [matMenuTriggerFor]="manageMenu" class="shortTextBtn">Manage</button>
     <mat-menu #manageMenu="matMenu" xPosition="before">
       <button mat-menu-item [routerLink]="['/admin/bookform']">Add Book</button>
       <button mat-menu-item [routerLink]="['/admin/birthdaycardform']">Add Birthday Card</button>

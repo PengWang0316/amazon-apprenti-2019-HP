@@ -11,6 +11,9 @@ import fetchBirthdayCards from './controllers/fetch-birthday-cards';
 import fetchBook from './controllers/fetch-book';
 import updateBookController from './controllers/update-book';
 import deleteBookController from './controllers/delete-book';
+import fetchBirthdayCardController from './controllers/fetch-birthday-card';
+import updateBirthdayCardController from './controllers/update-birthday-card';
+import deleteBirthdayCardController from './controllers/delete-birthday-card';
 
 dotenv.config();
 
@@ -36,5 +39,8 @@ app.get('/birthdayCards', fetchBirthdayCards);
 app.get('/book/:id', fetchBook);
 app.put('/book', updateBookController);
 app.delete('/book/:id', deleteBookController);
+app.get('/birthdayCard/:id', fetchBirthdayCardController);
+app.put('/birthdayCard', updateBirthdayCardController);
+app.delete('/birthdayCard/:id', deleteBirthdayCardController);
 
 app.listen(process.env.port, () => console.log(`The server is running on http://localhost:${process.env.port}`));

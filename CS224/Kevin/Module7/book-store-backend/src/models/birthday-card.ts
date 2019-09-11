@@ -23,3 +23,11 @@ export const addBirthdayCard = (title: string, material: string, picture: string
 };
 
 export const fetchBirthdayCards = async () => await BirthdayCard.find({});
+
+export const fetchBirthdayCard = async (id: string) => await BirthdayCard.find({ _id: id });
+
+export const updateBirthdayCard = async (
+  id: string, title: string, material: string, picture: string, price: number,
+) => await BirthdayCard.findByIdAndUpdate(id, { material, title, picture, price });
+
+export const deleteBirthdayCard = async (id: string) => await BirthdayCard.deleteOne({ _id: id });

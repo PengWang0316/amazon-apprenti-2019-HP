@@ -40,4 +40,11 @@ export class BirthdayCardsComponent implements OnInit {
     });
   }
 
+  delete(id: string): void {
+    // Remove the book data from two internal data sources
+    delete this.birthdayCardsObject[id];
+    this.birthdayCards = this.birthdayCards.filter((card) => card._id !== id );
+    this.apiService.deleteBirthdayCard(id).subscribe();
+  }
+
 }
