@@ -23,8 +23,8 @@ mongoose.set('useFindAndModify', false);
 const db = mongoose.connection;
 
 const app = express();
-// Set the Access-Control-Allow-Origin to http://localhost:4200 to allow our Angular app call the API
-app.use(cors({ origin: 'http://localhost:4200' }));
+// Set the Access-Control-Allow-Origin to * to allow our Angular app call the API
+app.use(cors());
 
 // support parsing of application/json type post data
 app.use(bodyParser.json());
